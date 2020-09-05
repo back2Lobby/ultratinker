@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TinkerPlus</title>
+    <title>UltraTinker</title>
     <style>
         * {
             margin: 0;
@@ -91,11 +91,11 @@
 
 <body>
     <header>
-        <h1>TinkerPlus</h1>
+        <h1>UltraTinker</h1>
         <div class="controls">
             <form action="" method="POST">
-                <button type="button" class="run_btn" name="run" title="Run">▶</button>
-                <button type="button" class="reset_btn" name="reset" title="Clear Input & Output">Clear</button>
+                <button type="button" class="run_btn" name="run" title="Run (Ctrl+Enter)">▶</button>
+                <button type="button" class="reset_btn" name="reset" title="Clear Both (Ctrl+Backspace)">Clear</button>
             </form>
         </div>
     </header>
@@ -121,7 +121,7 @@
         run_btn.addEventListener('click', () => {
             //send input data
             var http = new XMLHttpRequest();
-            var url = 'tinkerplus.php';
+            var url = 'ultratinker.php';
             var params = 'input=' + input.value;
             http.open('POST', url, true);
 

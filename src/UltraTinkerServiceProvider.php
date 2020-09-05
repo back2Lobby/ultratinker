@@ -1,6 +1,6 @@
 <?php
 
-namespace Back2Future\TinkerPlus;
+namespace Back2Future\UltraTinker;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -24,9 +24,9 @@ class TinkerPlusServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('tinkerplus.init', function ($app) {
-            return $app['Back2Future\TinkerPlus\Commands\TinkerPlusInit'];
+        $this->app->singleton('ultratinker.init', function ($app) {
+            return $app['Back2Future\UltraTinker\Commands\UltraTinkerInit'];
         });
-        $this->commands('tinkerplus.init');
+        $this->commands('ultratinker.init');
     }
 }

@@ -1,5 +1,5 @@
 {
-    "name": "back2future/tinkerplus",
+    "name": "back2future/ultratinker",
     "description": "Laravel Tinker with super powers",
     "type": "library",
     "authors": [
@@ -10,12 +10,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "Back2Future\\TinkerPlus\\": "src/"
+            "Back2Future\\UltraTinker\\": "src/"
         }
     },
     "require": {
         "php": ">=5.5",
-        "voku/ansi-to-html": "dev-master"
+        "voku/ansi-to-html": "v2.1.0"
     },
     "license": "MIT",
     "minimum-stability": "dev"

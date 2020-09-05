@@ -1,19 +1,18 @@
 <?php
 
-namespace Back2Future\TinkerPlus\Commands;
+namespace Back2Future\UltraTinker\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facade\Hash;
 use Symfony\Component\Console\Input\InputArgument;
 
-class TinkerPlusInit extends Command
+class UltraTinkerInit extends Command
 {
     /**
      * The console command name.
      *
      * @var string
      */
-    protected $name = 'tinkerplus';
+    protected $name = 'ultratinker';
 
     /**
      * The console command description.
@@ -31,6 +30,6 @@ class TinkerPlusInit extends Command
 
     public function handle()
     {
-        echo shell_exec("cd vendor/back2future/tinkerplus/src/TinkerPlus;php -S localhost:8989");
+        echo shell_exec("cd vendor/back2future/ultratinker/src/UltraTinker;php -S localhost:8989");
     }
 }
