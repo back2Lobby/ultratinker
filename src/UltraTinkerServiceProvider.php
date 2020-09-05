@@ -4,7 +4,7 @@ namespace Back2Future\UltraTinker;
 
 use Illuminate\Support\ServiceProvider;
 
-class TinkerPlusServiceProvider extends ServiceProvider
+class UltraTinkerServiceProvider extends ServiceProvider
 {
 
     /**
