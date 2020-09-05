@@ -2,15 +2,21 @@
     "name": "back2future/tinkerplus",
     "description": "Laravel Tinker with super powers",
     "type": "library",
+    "authors": [
+        {
+            "name": "Tayyab",
+            "email": "tayyabisking1101@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Back2Future\\TinkerPlus\\": "src/"
+        }
+    },
     "require": {
         "php": ">=5.5",
         "voku/ansi-to-html": "dev-master"
     },
     "license": "MIT",
-    "minimum-stability": "dev",
-    "scripts": {
-        "post-package-install": [
-            "php injector.php"
-        ]
-    }
+    "minimum-stability": "dev"
 }
