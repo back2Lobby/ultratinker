@@ -1,4 +1,4 @@
-# tinkerplus
+# Tinkerplus
 Laravel Tinker with super powers 
 
 ## Installation
