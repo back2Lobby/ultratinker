@@ -2,7 +2,7 @@
 
 namespace Back2Future\TinkerPlus\Commands;
 
-use Illuminate\App\Console\Command;
+use Illuminate\Console\Command;
 use Illuminate\Support\Facade\Hash;
 use Symfony\Component\Console\Input\InputArgument;
 
@@ -29,9 +29,8 @@ class TinkerPlusInit extends Command
      * @return mixed
      */
 
-    public function fire()
+    public function handle()
     {
-        $this->info('Tinkerplus Process Started!');
-        return shell_exec("pwd");
+        echo shell_exec("cd vendor/back2future/tinkerplus/src/TinkerPlus;php -S localhost:8989");
     }
 }
