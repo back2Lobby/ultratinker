@@ -20,7 +20,7 @@ class TinkerPlusInit extends Command
      *
      * @var string
      */
-    protected $description = 'TinkerPlus with super powers';
+    protected $description = 'Tinker with super powers';
 
 
     /**
