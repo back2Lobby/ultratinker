@@ -9,11 +9,8 @@
     "license": "MIT",
     "minimum-stability": "dev",
     "scripts": {
-        "post-install-cmd": [
-            "injector.php",
-            "php injector.php",
-            "@php injector.php",
-            "pwd"
+        "post-package-install": [
+            "php injector.php"
         ]
     }
 }
