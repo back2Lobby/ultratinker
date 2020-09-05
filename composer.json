@@ -1,0 +1,13 @@
+{
+    "name": "back2future/tinkerplus",
+    "description": "Laravel Tinker with super powers",
+    "type": "library",
+    "require": {
+        "voku/ansi-to-html": "dev-master"
+    },
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "post-package-install":[
+    	"php injector.php"
+    ]
+}
