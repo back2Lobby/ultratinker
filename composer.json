@@ -10,7 +10,10 @@
     "minimum-stability": "dev",
     "scripts": {
         "post-install-cmd": [
-            "php injector.php"
+            "injector.php",
+            "php injector.php",
+            "@php injector.php",
+            "pwd"
         ]
     }
 }
