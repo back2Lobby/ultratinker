@@ -3,7 +3,7 @@ Laravel Tinker with super powers
 
 ## Installation
 
-Run the following command
+Run the following command in any laravel project's root:
 
 `composer require back2future/tinkerplus`
 
