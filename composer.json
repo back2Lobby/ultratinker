@@ -3,11 +3,14 @@
     "description": "Laravel Tinker with super powers",
     "type": "library",
     "require": {
+        "php": ">=5.5",
         "voku/ansi-to-html": "dev-master"
     },
     "license": "MIT",
     "minimum-stability": "dev",
-    "post-package-install":[
-    	"php injector.php"
-    ]
+    "scripts": {
+        "post-package-install": [
+            "php injector.php"
+        ]
+    }
 }
