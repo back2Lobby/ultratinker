@@ -57,14 +57,18 @@
             right: 0;
         }
 
-        .run_btn,
-        .reset_btn {
+        .controls>form>button {
             padding: 4px;
             margin: 1px;
             font-size: 1.2em;
             border: none;
             cursor: pointer;
             border-radius: 1px;
+            outline: none;
+        }
+
+        .controls>form>button:hover {
+            background-color: gray;
         }
 
         .run_btn {
@@ -75,6 +79,10 @@
 
         .reset_btn {
             color: #333;
+        }
+
+        .show_query {
+            background-color: #ddd;
         }
 
         @media screen and (max-width:950px) {
@@ -96,6 +104,7 @@
             <form action="" method="POST">
                 <button type="button" class="run_btn" name="run" title="Run (Ctrl+Enter)">▶</button>
                 <button type="button" class="reset_btn" name="reset" title="Clear Both (Ctrl+Backspace)">Clear</button>
+                <button type="button" class="show_query" name="show_query" title="Show Queries Performed">Show Queries</button>
             </form>
         </div>
     </header>
@@ -110,8 +119,10 @@
     <script>
         const run_btn = document.querySelector('.run_btn');
         const clear = document.querySelector('.reset_btn');
+        const query = document.querySelector('.show_query');
         var output = document.querySelector('.output');
         var input = document.querySelector('.input > textarea');
+        var show_query = false;
         input.focus();
         //empty input/output on clear button
         clear.addEventListener('click', () => {
@@ -122,7 +133,7 @@
             //send input data
             var http = new XMLHttpRequest();
             var url = 'ultratinker.php';
-            var params = 'input=' + input.value;
+            var params = show_query ? 'input=' + input.value + '&show_query=' + show_query : 'input=' + input.value;
             http.open('POST', url, true);
 
             //Send the proper header information along with the request
@@ -153,6 +164,17 @@
                 return false;
             }
         }
+
+        //queries button toggler
+        query.addEventListener('click', () => {
+            if (query.style.backgroundColor == "#ddd" || query.style.backgroundColor == "" || query.style.backgroundColor == "rgb(221, 221, 221)") {
+                query.style.backgroundColor = "gray";
+                show_query = true;
+            } else {
+                query.style.backgroundColor = "#ddd";
+                show_query = false;
+            }
+        });
     </script>
 
 </body>
