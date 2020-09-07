@@ -62,7 +62,7 @@
             margin: 1px;
             font-size: 1.2em;
             border: none;
-            cursor: pointer;
+            cursor: pointer !important;
             border-radius: 1px;
             outline: none;
         }
@@ -85,6 +85,10 @@
             background-color: #ddd;
         }
 
+        .auto_run:hover {
+            mix-blend-mode: exclusion;
+        }
+
         @media screen and (max-width:950px) {
             main {
                 flex-direction: column;
@@ -105,6 +109,7 @@
                 <button type="button" class="run_btn" name="run" title="Run (Ctrl+Enter)">▶</button>
                 <button type="button" class="reset_btn" name="reset" title="Clear Both (Ctrl+Backspace)">Clear</button>
                 <button type="button" class="show_query" name="show_query" title="Show Queries Performed">Show Queries</button>
+                <button type="button" class="auto_run" name="auto_run" title="Auto Run (0.2s delay)">Auto Run</button>
             </form>
         </div>
     </header>
@@ -120,10 +125,13 @@
         const run_btn = document.querySelector('.run_btn');
         const clear = document.querySelector('.reset_btn');
         const query = document.querySelector('.show_query');
+        var auto_run = document.querySelector('.auto_run');
         var output = document.querySelector('.output');
         var input = document.querySelector('.input > textarea');
+        var auto_run_toggle = false;
         var show_query = false;
         input.focus();
+
         //empty input/output on clear button
         clear.addEventListener('click', () => {
             input.value = "";
@@ -175,6 +183,30 @@
                 show_query = false;
             }
         });
+        //auto run the code on 0.2 second delay
+        var waitTime = 0.2;
+        var timeout = null;
+        auto_run.addEventListener('click', () => {
+            if (auto_run_toggle == false) {
+                input.addEventListener('keypress', autoRun);
+                auto_run.style.backgroundColor = "#93cf96";
+                auto_run_toggle = true;
+            } else {
+                input.removeEventListener('keypress', autoRun);
+                auto_run.style.backgroundColor = "#ddd";
+                auto_run_toggle = false;
+                input.focus();
+            }
+        });
+        auto_run.click();
+
+
+        function autoRun() {
+            clearTimeout(timeout);
+            timeout = setTimeout(function() {
+                run_btn.click();
+            }, waitTime * 1000);
+        }
     </script>
 
 </body>
