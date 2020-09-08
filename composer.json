@@ -14,9 +14,4 @@
         }
     },
     "license": "MIT",
-    "extra": {
-        "branch-alias": {
-            "dev-master": "0.10.x-dev"
-        }
-    }
 }
