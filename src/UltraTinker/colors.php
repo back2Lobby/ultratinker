@@ -10,7 +10,9 @@ $colors = [
     '[36m' => 'cyan',
     '[39;49;22m' => 'white',
     '[38;5;38m' => 'coral',
-    '[m' => 'white'
+    '[m' => 'white',
+    '[1m' => 'white',
+    '[22m' => 'white'
 ];
 $bgColors = [
     '[37;41;1m' => 'red'
